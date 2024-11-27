@@ -1,0 +1,17 @@
+{
+  "description" : null,
+  "methods" : {
+    "getSTSSessionToken" : [ {
+      "url" : {
+        "value" : "/sTssessionToken",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : { }
+    } ]
+  }
+}

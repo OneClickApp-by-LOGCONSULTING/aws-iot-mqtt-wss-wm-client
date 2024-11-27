@@ -1,0 +1,8 @@
+{
+  "id" : "security",
+  "type" : "JavaService",
+  "packageNames" : [ "com.wss_mqtt_prefab.security" ],
+  "serviceClassNames" : [ "com.wss_mqtt_prefab.security.Security" ],
+  "title" : "security",
+  "mockEnabled" : false
+}

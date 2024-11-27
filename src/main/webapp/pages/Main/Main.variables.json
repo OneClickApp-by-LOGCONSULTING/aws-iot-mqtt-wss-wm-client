@@ -1,0 +1,53 @@
+{
+  "payloadsString" : {
+    "_id" : "wm-payloadsString-wm.Variable-1732370952666",
+    "name" : "payloadsString",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataBinding",
+      "value" : "bind:Prefab.cq.queue"
+    } ],
+    "dataSet" : [ ],
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "STSSecurityInformations" : {
+    "_id" : "wm-STSSecurityInformations-wm.ServiceVariable-1732379746532",
+    "name" : "STSSecurityInformations",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wss_mqtt_prefab.security.model.STSCredentials",
+    "service" : "security",
+    "operation" : "getSTSSessionToken",
+    "operationId" : "SecurityController_getSTSSessionToken",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeUpdate" : "STSSecurityInformationsonBeforeUpdate(variable, inputData, options)",
+    "onSuccess" : "STSSecurityInformationsonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Security"
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

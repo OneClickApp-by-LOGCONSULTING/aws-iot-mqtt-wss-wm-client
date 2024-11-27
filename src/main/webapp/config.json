@@ -1,0 +1,126 @@
+{
+  "displayName" : "wss-mqtt-prefab",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ "/resources/paho-mqtt-min.js", "/resources/crypto-js.js", "/resources/mqtt-connector.js" ]
+  },
+  "properties" : {
+    "clientid" : {
+      "type" : "string",
+      "displayName" : "MqttClientId",
+      "description" : "It is the clientId for mqtt connect. Set it to random to be sure to have unique . AWS IoT core reject equal mqtt client id for the same connection.",
+      "bindable" : "in-bound",
+      "value" : "test-client-id",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "region" : {
+      "type" : "string",
+      "displayName" : "Region",
+      "description" : "AWS region where IoT core enpoint is hosted.",
+      "bindable" : "in-bound",
+      "value" : "eu-west-1",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "endpoint" : {
+      "type" : "string",
+      "displayName" : "Endpoint",
+      "description" : "aws endpoint for IoT core Message Broker",
+      "bindable" : "in-bound",
+      "value" : "a1sess87f4pfsp-ats.iot.eu-west-1.amazonaws.com",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "topics" : {
+      "type" : "string",
+      "displayName" : "Topics",
+      "description" : "topics list. It is a simple strings list divided by comma i.e. \"test/test\",\"subscribe/here\". ",
+      "bindable" : "in-bound",
+      "isList" : true,
+      "value" : "",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "publish" : {
+      "type" : "object",
+      "displayName" : "Publish",
+      "description" : "Message to publish. It is a JSON object :\n{ topic: \"publish/in/this/topic\", payload: \"{'message':'to','send':'as','string':'hello' }\"",
+      "bindable" : "in-out-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "lastmessage" : {
+      "type" : "object",
+      "displayName" : "Last message received",
+      "description" : "It Last message received, the prefab expose it also as useful output",
+      "bindable" : "out-bound",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "queuesize" : {
+      "type" : "number",
+      "displayName" : "Front End Circular Queue Size",
+      "description" : "The Front-End Queue is a sorted FIFO queue of n elements (QueueSize) where the message are stored. Received messages remove the oldest. This paramater is the size of the queue. Default value is 10.",
+      "bindable" : "in-bound",
+      "value" : 10,
+      "widget" : "slider",
+      "min" : 1,
+      "max" : 100,
+      "step" : 1,
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "circularqueue" : {
+      "type" : "object",
+      "displayName" : "Circular queue",
+      "description" : "The Front-End Queue is a sorted FIFO queue of n elements (QueueSize) where the message are stored. Received messages remove the oldest. This output is the entire queue exposed as output by the prefab.",
+      "bindable" : "out-bound",
+      "isList" : false,
+      "value" : "",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "showgui" : {
+      "type" : "boolean",
+      "displayName" : "Show GUI",
+      "description" : "Show the gui to send message ans MQTT behaviour. ",
+      "bindable" : "in-bound",
+      "value" : false,
+      "widget" : "checkbox",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onMessagearrive" : {
+      "description" : "Callback action when a new message enter in the circular queue",
+      "eventData" : "",
+      "displayName" : "Messagearrive"
+    },
+    "onPublish" : {
+      "description" : "Callback when new message is published to the broker",
+      "eventData" : "",
+      "displayName" : "Publish"
+    }
+  },
+  "methods" : { }
+}
